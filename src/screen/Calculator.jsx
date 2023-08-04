@@ -10,7 +10,6 @@ export const ACTIONS = {
     EVALUATE: 'evaluate',
     PERCENTAGE: 'percentage',
     SIGN_CONVERT: 'sign-convert',
-    DELETE_DIGIT: 'delete-digit',
 };
 
 
@@ -83,25 +82,7 @@ const reducer = (state, {type, payload}) => {
           }
       case ACTIONS.CLEAR:
           return {}
-      case ACTIONS.DELETE_DIGIT:
-        if(state.overwrite){
-          return {
-            ...state,
-            current: null,
-            overwrite: false
-          }
-        }
-        if(state.current == null) return state;
-        if(state.current.length === 1){
-          return {
-            ...state,
-            current: null,
-          }
-        }
-          return {
-            ...state,
-            current: state.current.slice(0,-1)
-          }
+
       case ACTIONS.EVALUATE:
         if(state.operation == null || state.previouse == null || state.current == null) return state;
         return {
