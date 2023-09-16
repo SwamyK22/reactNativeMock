@@ -1,9 +1,10 @@
 import React from 'react'
-import Calculator from './src/screen/Calculator'
+import Timer from './src/Timer/Timer'
 
 const App = () => {
   return (
-    <Calculator />
+    
+    <Timer />
   )
 }
 
